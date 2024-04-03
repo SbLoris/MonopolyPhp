@@ -2,17 +2,14 @@
 
 namespace App\Interfaces;
 
-use App\Classes\Space;
-
-
 interface InterfaceBoard {
     /**
      * Récupère une case du plateau par sa position.
      *
      * @param int $position La position de la case sur le plateau.
-     * @return ?Space La case à la position spécifiée, ou null si aucune case n'est trouvée.
+     * @return ?array La case à la position spécifiée, ou null si aucune case n'est trouvée.
      */
-    public function getSpace(int $position): ?Space;
+    public function getSpace(int $position): ?array;
 
     /**
      * Initialise les cases du plateau.

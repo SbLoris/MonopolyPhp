@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-class LuckCard implements InterfaceLuckCard {
+class CommunityChestSpace implements InterfaceCommunityChestSpace {
     public string $description;
     public callable $action;
 

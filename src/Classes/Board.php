@@ -266,15 +266,6 @@ class Board implements InterfaceBoard
           'rent' => [50, 200,  600, 1350, 1750],
           ];
   }
-    private function createProperty($name, $color, $price, $rent) {
-          return [
-              'type' => 'Property',
-              'name' => $name,
-              'color' => $color,
-              'price' => $price,
-              'rent' => $rent,
-          ];
-      }
 
     private function createProperty($name, $color, $price, $rent)
     {
@@ -297,8 +288,9 @@ class Board implements InterfaceBoard
         $this->spaces[35] = ['type' => 'Railroad', 'name' => 'Gare Saint-Nazaire', 'price' => 200, 'rent' => [25, 50, 100, 200]];
     }
 
-    public function getSpace(int $position): ?Space
-    {
-        return $this->spaces[$position] ?? null;
-    }
+   public function getSpace(int $position): ?array
+   {
+       return $this->spaces[$position] ?? null;
+   }
+
 }

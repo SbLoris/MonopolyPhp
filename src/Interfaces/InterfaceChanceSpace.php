@@ -5,14 +5,14 @@ namespace App\Interfaces;
 use App\Classes\Player;
 use App\Classes\Game;
 
-interface InterfaceLuckCard {
+interface InterfaceChanceSpace {
     /**
      * Construit une carte Chance avec une description et une action spécifique.
      *
      * @param string $description La description de l'action de la carte.
      * @param callable $action L'action à exécuter lorsque la carte est utilisée.
      */
-    public function __construct(string $description, callable $action);
+    public function __construct(string $description);
 
     /**
      * Exécute l'action associée à la carte sur le joueur et potentiellement affecte le jeu.

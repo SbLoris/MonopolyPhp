@@ -5,7 +5,7 @@ namespace App\Interfaces;
 use App\Classes\Player;
 use App\Classes\Game;
 
-interface InterfaceCommunityCard {
+interface InterfaceCommunityChestSpace {
     /**
      * Construit une carte de la caisse de communauté avec une description et une action.
      *
