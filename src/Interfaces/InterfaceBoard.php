@@ -2,6 +2,9 @@
 
 namespace App\Interfaces;
 
+use App\Classes\Space;
+
+
 interface InterfaceBoard {
     /**
      * Récupère une case du plateau par sa position.
