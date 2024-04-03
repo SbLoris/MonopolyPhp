@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-class Player {
+class Player implements InterfacePlayer {
     public string $name;
     public float $cash;
     public array $properties; // Les propriétés détenues par le joueur

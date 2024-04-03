@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-class Game {
+class Game implements InterfaceGame {
     public array $players;
     public array $board; // Contiendra les propriétés, les chances, et les communautés
     public Dices $dices;

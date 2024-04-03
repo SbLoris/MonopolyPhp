@@ -2,7 +2,9 @@
 
 namespace App\Classes;
 
-class Property {
+use App\Interfaces\InterfaceProperty;
+
+class Property implements InterfaceProperty {
     public string $name;
     public string $color;
     public ?Player $currentOwner = null;
