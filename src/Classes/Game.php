@@ -2,22 +2,27 @@
 
 namespace App\Classes;
 
-class Game implements InterfaceGame {
+use App\Interfaces\InterfaceGame;
+
+class Game implements InterfaceGame
+{
     public array $players;
-    public array $board; // Contiendra les propriétés, les chances, et les communautés
+    public Board $board; // Contiendra les propriétés, les chances, et les communautés
     public Dices $dices;
     public int $currentPlayerIndex = 0;
 
-    public function __construct(array $players, array $board) {
+    public function __construct(array $players, Board $board)
+    {
         $this->players = $players;
         $this->board = $board;
         $this->dices = new Dices();
     }
 
-    public function playTurn() {
+    public function playTurn(): void
+    {
         $currentPlayer = $this->players[$this->currentPlayerIndex];
         $roll = $this->dices->roll();
-        $newPosition = ($currentPlayer->position + $roll) % count($this->board); // Assure un cycle sur le plateau
+        $newPosition = ($currentPlayer->position + $roll) % count($this->board->spaces); // Assure un cycle sur le plateau
         $currentPlayer->move($roll);
 
         $this->handleLanding($currentPlayer, $newPosition);
@@ -29,8 +34,9 @@ class Game implements InterfaceGame {
         $this->currentPlayerIndex = ($this->currentPlayerIndex + 1) % count($this->players);
     }
 
-    private function handleLanding(Player $player, int $position) {
-        $space = $this->board[$position];
+    public function handleLanding(Player $player, int $position): void
+    {
+        $space = $this->board->getSpace($position);
 
         // Ici, tu pourras ajouter une logique pour déterminer le type de case et agir en conséquence
         if ($space instanceof Property && $space->currentOwner === null) {
@@ -40,6 +46,5 @@ class Game implements InterfaceGame {
         } elseif ($space instanceof CommunityChest) {
             // Tirer une carte Communauté
         }
-        // Ajoute d'autres cas au besoin
     }
 }

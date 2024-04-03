@@ -2,7 +2,9 @@
 
 namespace App\Classes;
 
-class Railroad
+use App\Interfaces\InterfaceRailRoad;
+
+class Railroad implements InterfaceRailRoad
 {
     private string $name;
     private int $price;

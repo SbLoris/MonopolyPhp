@@ -2,6 +2,8 @@
 
 namespace App\Classes;
 
+use App\Interfaces\InterfacePlayer;
+
 class Player implements InterfacePlayer {
     public string $name;
     public float $cash;

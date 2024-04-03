@@ -25,5 +25,5 @@ interface InterfaceGame {
      * @param Player $player Le joueur qui atterrit sur une case.
      * @param int $position La position du joueur sur le plateau.
      */
-    private function handleLanding(Player $player, int $position);
+    public function handleLanding(Player $player, int $position);
 }

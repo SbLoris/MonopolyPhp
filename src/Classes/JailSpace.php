@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Classes;
+use App\Interfaces\InterfaceJail;
 
 class JailSpace
 {

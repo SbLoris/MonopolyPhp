@@ -2,7 +2,9 @@
 
 namespace App\Classes;
 
-class Utility
+use App\Interfaces\InterfaceUtility;
+
+class Utility implements InterfaceUtility
 {
     private string $name;
     private int $price;

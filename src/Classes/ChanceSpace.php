@@ -3,20 +3,28 @@
 namespace App\Classes;
 
 use App\Interfaces\InterfaceChanceSpace;
-use App\Player;
-use App\Game;
+use App\Classes\Player; // Utilisation du namespace correct pour la classe Player
+use App\Classes\Game; // Utilisation du namespace correct pour la classe Game
 
 class ChanceSpace implements InterfaceChanceSpace
 {
     public string $description;
+    public $action;
 
     public function __construct(string $description)
     {
         $this->description = $description;
     }
 
-    public function execute(Player $player, Game $game)
+    public function setAction($action): void
     {
-        // Todo ajouter le code qui execute l'action
+        $this->action = $action;
+    }
+
+    public function execute(Player $player, Game $game): void // Utilisation du namespace correct pour la classe Player et Game
+    {
+        if ($this->action !== null && is_callable($this->action)) {
+            call_user_func($this->action, $player, $game);
+        }
     }
 }

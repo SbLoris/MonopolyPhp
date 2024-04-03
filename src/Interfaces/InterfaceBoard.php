@@ -9,7 +9,10 @@ interface InterfaceBoard {
      * @param int $position La position de la case sur le plateau.
      * @return ?array La case à la position spécifiée, ou null si aucune case n'est trouvée.
      */
-    public function getSpace(int $position): ?array;
+public function getSpace(int $position): ?array {
+    return $this->spaces[$position] ?? null;
+}
+
 
     /**
      * Initialise les cases du plateau.

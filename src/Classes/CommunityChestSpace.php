@@ -2,6 +2,8 @@
 
 namespace App\Classes;
 
+use App\Interfaces\InterfaceCommunityChestSpace;
+
 class CommunityChestSpace implements InterfaceCommunityChestSpace {
     public string $description;
     public callable $action;

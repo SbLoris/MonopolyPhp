@@ -2,7 +2,9 @@
 
 namespace App\Classes;
 
-class StartSpace
+use App\Interfaces\InterfaceStartSpace;
+
+class StartSpace implements InterfaceStartSpace
 {
     private string $name;
 
